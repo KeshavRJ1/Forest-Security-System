@@ -1,0 +1,213 @@
+/*body {
+    font-family: "Segoe UI", sans-serif;
+    background: #f4f8f4;
+    margin: 0;
+}
+
+.top {
+    background: linear-gradient(135deg, #1b5e20, #388e3c);
+    color: white;
+    text-align: center;
+    padding: 25px 10px;
+}
+
+.header-img {
+    width: 80px;
+    margin-top: 10px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px;
+}
+
+button {
+    padding: 12px 18px;
+    border-radius: 30px;
+    font-size: 15px;
+    cursor: pointer;
+    border: none;
+}
+
+.primary {
+    background: #d32f2f;
+    color: white;
+}
+
+.secondary {
+    background: #1976d2;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.card {
+    background: white;
+    margin: 20px auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 420px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.alert-list {
+    list-style: none;
+    padding: 0;
+}
+
+.alert-list li {
+    background: #fff3cd;
+    border-left: 5px solid #ff9800;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.hidden {
+    display: none;
+}
+
+.alert-img {
+    width: 50px;
+    margin-bottom: 10px;
+}
+*/
+/* ====== CSS for Dashboard UI ====== */
+body {
+    font-family: "Segoe UI", sans-serif;
+    margin: 0;
+    background: #e8f5e9;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #1b5e20, #43a047);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 26px;
+}
+
+header p {
+    margin: 5px 0 0 0;
+    font-size: 14px;
+}
+
+.header-img {
+    width: 80px;
+    margin-top: 10px;
+}
+
+/* Main layout */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+    gap: 20px;
+}
+
+/* Sidebar buttons */
+.sidebar {
+    flex: 1 1 200px;
+    min-width: 180px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sidebar button {
+    padding: 15px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.primary { background: #d32f2f; }
+.secondary { background: #1976d2; }
+.info { background: #f57c00; }
+
+.sidebar button:hover { opacity: 0.9; }
+
+/* Main content */
+.main {
+    flex: 3 1 600px;
+    min-width: 300px;
+}
+
+/* Cards */
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.card h2 { margin-top: 0; }
+
+/* Inputs */
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* Alerts List */
+.alert-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+}
+
+.alert-list li {
+    background: #fff3cd;
+    border-left: 6px solid #ff9800;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.alert-list li img {
+    width: 30px;
+    height: 30px;
+    align-self: flex-end;
+}
+
+/* Hidden */
+.hidden { display: none; }
+
+/* Responsive */
+@media(max-width:768px){
+    .container { flex-direction: column; }
+    .alert-list { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,131 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wildlife Alert System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top">
+    <h1>🐘 Wildlife Alert System</h1>
+    <p>Real-time alerts to prevent human & wildlife accidents</p>
+    <img src="images/elephant.png" alt="Elephant" class="header-img">
+</header>
+
+<section class="buttons">
+    <button class="primary" onclick="showReport()">🚨 Report Sighting</button>
+    <button class="secondary" onclick="showAlerts()">📍 View Alerts</button>
+</section>
+
+<section id="reportSection" class="card hidden">
+    <h2>Report Wildlife Sighting</h2>
+    <p style="font-size:13px;color:gray;">
+        Help others by reporting wildlife sightings instantly.
+    </p>
+    <input type="text" id="animal" placeholder="Animal Name">
+    <input type="text" id="location" placeholder="Location">
+    <button class="primary" onclick="submitReport()">Submit Report</button>
+</section>
+
+<section id="alertSection" class="card hidden">
+    <h2>⚠️ Active Alerts</h2>
+    <img src="images/alert.png" alt="Alert" class="alert-img">
+    <ul id="alertList" class="alert-list"></ul>
+</section>
+
+<script>
+    const reportSection = document.getElementById('reportSection');
+    const alertSection = document.getElementById('alertSection');
+    const alertList = document.getElementById('alertList');
+
+    function showReport() {
+        reportSection.classList.remove('hidden');
+        alertSection.classList.add('hidden');
+    }
+
+    function showAlerts() {
+        reportSection.classList.add('hidden');
+        alertSection.classList.remove('hidden');
+    }
+
+    function submitReport() {
+        const animal = document.getElementById('animal').value.trim();
+        const location = document.getElementById('location').value.trim();
+
+        if (animal && location) {
+            const li = document.createElement('li');
+            li.textContent = `${animal} sighted at ${location}`;
+            alertList.appendChild(li);
+
+            document.getElementById('animal').value = '';
+            document.getElementById('location').value = '';
+
+            alertSection.classList.remove('hidden');
+            reportSection.classList.add('hidden');
+        } else {
+            alert('Please enter both animal and location!');
+        }
+    }
+</script>
+
+</body>
+</html>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wildlife Alert Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>🐘 Wildlife Alert Dashboard</h1>
+    <p>Real-time alerts to prevent human & wildlife accidents</p>
+    <img src="images/elephant.png" alt="Elephant" class="header-img">
+</header>
+
+<div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <button class="primary" onclick="showReport()">🚨 Report Sighting</button>
+        <button class="secondary" onclick="showAlerts()">📍 View Alerts</button>
+        <button class="info" onclick="showStats()">📊 Statistics</button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+        <!-- Report Section -->
+        <section id="reportSection" class="card hidden">
+            <h2>Report Wildlife Sighting</h2>
+            <p style="font-size:13px;color:gray;">Help others by reporting wildlife sightings instantly.</p>
+            <input type="text" id="animal" placeholder="Animal Name">
+            <input type="text" id="location" placeholder="Location">
+            <input type="date" id="date">
+            <input type="time" id="time">
+            <input type="number" id="number" placeholder="Your Contact Number">
+            <button class="primary" onclick="submitReport()">Submit Report</button>
+        </section>
+
+        <!-- Alerts Section -->
+        <section id="alertSection" class="card hidden">
+            <h2>⚠️ Active Alerts</h2>
+            <ul id="alertList" class="alert-list"></ul>
+        </section>
+
+        <!-- Statistics Section -->
+        <section id="statsSection" class="card hidden">
+            <h2>📊 Statistics</h2>
+            <p>Total Reports: <span id="totalReports">0</span></p>
+            <p>Most Reported Animal: <span id="mostAnimal">N/A</span></p>
+        </section>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
